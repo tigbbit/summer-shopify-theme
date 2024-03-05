@@ -52,7 +52,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "change made from code editor",
             "heading_size": "h1"
           }
         },
@@ -71,7 +71,7 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 60
       }
     },
     "featured_collection": {
@@ -200,8 +200,9 @@
     }
   },
   "order": [
-    "image_banner",
     "rich_text",
+    "image_banner",
+
     "featured_collection",
     "collage",
     "video",
