@@ -4,7 +4,7 @@
       "type": "marquee",
       "settings": {
         "headline": "Mateo",
-        "bgColor": "#ff0202"
+        "textColor": "#82c25d"
       }
     },
     "rich_text": {

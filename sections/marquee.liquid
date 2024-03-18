@@ -2,8 +2,8 @@
 
 <section
   class="marquee"
-  {% if section.settings.bgColor %}
-    style="color : #ff0000 "
+  {% if section.settings.textColor %}
+    style="color : {{ section.settings.textColor }} "
   {% endif %}
 >
   <section class="marquee__slider">
@@ -26,6 +26,11 @@
     <h1>{{ section.settings.headline }}</h1>
     <h1>{{ section.settings.headline }}</h1>
   </section>
+
+  <script>
+    console.log('current tc', '{{section.settings.textColor}}');
+    console.log('current bg', '{{section.settings.bgColor}}');
+  </script>
 </section>
 
 {% schema %}
@@ -45,10 +50,16 @@
       "id": "headline"
     },
     {
-      "label": "background color",
+      "label": "text color",
+      "type": "color",
+      "id": "textColor",
+      "default": "#555555"
+    },
+    {
+      "label": "backGround color",
       "type": "color",
       "id": "bgColor",
-      "default": "#110000"
+      "default": "#000000"
     }
   ]
 }
