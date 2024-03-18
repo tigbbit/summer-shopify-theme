@@ -3,7 +3,8 @@
     "marquee_JMte6K": {
       "type": "marquee",
       "settings": {
-        "headline": "Mateo"
+        "headline": "Mateo",
+        "bgColor": "#ff0202"
       }
     },
     "rich_text": {
