@@ -14,7 +14,7 @@
 }
 
 .marquee__slider {
-    animation: 7s marqueeSlide infinite linear;
+    animation: 8s marqueeSlide infinite linear;
     display: inline-block;
 }
 

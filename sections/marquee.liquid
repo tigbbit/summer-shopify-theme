@@ -2,34 +2,21 @@
 
 <section
   class="marquee"
-  {% if section.settings.textColor %}
-    style="color : {{ section.settings.textColor }} "
-  {% endif %}
+  style="
+    color : {{section.settings.textColor}};
+    background-color: {{section.settings.bgColor}}
+  "
 >
-  <section class="marquee__slider">
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-  </section>
-  <section class="marquee__slider">
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-  </section>
-  <section class="marquee__slider">
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-  </section>
-  <section class="marquee__slider">
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-    <h1>{{ section.settings.headline }}</h1>
-  </section>
+  {% for item in (1..5) %}
+    <section class="marquee__slider">
+      <h1>{{ section.settings.headline }}</h1>
+      <h1>{{ section.settings.headline }}</h1>
+      <h1>{{ section.settings.headline }}</h1>
+    </section>
+  {% endfor %}
 
   <script>
-    console.log('current tc', '{{section.settings.textColor}}');
-    console.log('current bg', '{{section.settings.bgColor}}');
+    const marqueeSlider = document.querySelector('.marquee__slider').cloneNode(true);
   </script>
 </section>
 

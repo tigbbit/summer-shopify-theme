@@ -3,8 +3,9 @@
     "marquee_JMte6K": {
       "type": "marquee",
       "settings": {
-        "headline": "Mateo",
-        "textColor": "#82c25d"
+        "headline": " 🔥 HOT DEALS 🔥",
+        "textColor": "#82c25d",
+        "bgColor" : "#4e2ab0"
       }
     },
     "rich_text": {
