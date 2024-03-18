@@ -1,22 +1,55 @@
+{{ 'marquee.css' | asset_url | stylesheet_tag }}
 
-<h1>Hello {{section.settings.headline}}</h1>
+<section
+  class="marquee"
+  {% if section.settings.bgColor %}
+    style="color : #ff0000 "
+  {% endif %}
+>
+  <section class="marquee__slider">
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+  </section>
+  <section class="marquee__slider">
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+  </section>
+  <section class="marquee__slider">
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+  </section>
+  <section class="marquee__slider">
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+    <h1>{{ section.settings.headline }}</h1>
+  </section>
+</section>
 
 {% schema %}
 {
-    "name": "marquee",
-    "tag": "section",
-    "class": "marquee",
-    "presets": [
-        {
-            "name": "marquee"
-        }
-    ],
-    "settings": [
-        {
-            "label": "enter your name",
-            "type": "text",
-            "id": "headline"
-        }
-        ]
+  "name": "marquee",
+  "tag": "section",
+  "class": "scrolling-banner",
+  "presets": [
+    {
+      "name": "scrolling-banner"
+    }
+  ],
+  "settings": [
+    {
+      "label": "enter your name",
+      "type": "text",
+      "id": "headline"
+    },
+    {
+      "label": "background color",
+      "type": "color",
+      "id": "bgColor",
+      "default": "#110000"
+    }
+  ]
 }
 {% endschema %}

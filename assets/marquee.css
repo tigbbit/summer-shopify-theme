@@ -1,0 +1,29 @@
+@keyframes marqueeSlide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.marquee{
+    background-color: black;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee__slider {
+    animation: 7s marqueeSlide infinite linear;
+    display: inline-block;
+}
+
+.marquee__slider > * {
+    display: inline-block;
+    margin: 0px 2rem;
+    color : inherit;
+}
+
+.marquee:hover .marquee__slider {
+    animation-play-state: paused;
+}
