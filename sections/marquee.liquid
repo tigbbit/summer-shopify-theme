@@ -11,7 +11,10 @@
   "
 >
   {% for item in (1..5) %}
-    <section class="marquee__slider">
+    <section
+      class="marquee__slider"
+      style="animation-duration: {{section.settings.animationDuration}}s;"
+    >
       <h1>{{ section.settings.headline }}</h1>
       <h1>{{ section.settings.headline }}</h1>
       <h1>{{ section.settings.headline }}</h1>
@@ -73,6 +76,15 @@
       "max": 5,
       "step": 1,
       "default": 5
+    },
+    {
+      "label": "Border Size (Pixels)",
+      "type": "range",
+      "id": "animationDuration",
+      "min": 5,
+      "max": 15,
+      "step": 1,
+      "default": 10
     }
   ]
 }
