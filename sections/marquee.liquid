@@ -4,7 +4,10 @@
   class="marquee"
   style="
     color : {{section.settings.textColor}};
-    background-color: {{section.settings.bgColor}}
+    background-color: {{section.settings.bgColor}};
+    padding : {{section.settings.padding}}rem;
+    border-top: solid {{section.settings.borderSize}}px {{section.settings.borderColor}} ;
+    border-bottom: solid {{section.settings.borderSize}}px {{section.settings.borderColor}} ;
   "
 >
   {% for item in (1..5) %}
@@ -14,6 +17,9 @@
       <h1>{{ section.settings.headline }}</h1>
     </section>
   {% endfor %}
+  <script>
+    console.log('nigger', '{{section.settings.padding}}');
+  </script>
 </section>
 
 {% schema %}
@@ -28,21 +34,45 @@
   ],
   "settings": [
     {
-      "label": "enter your name",
+      "label": "Enter your name",
       "type": "text",
       "id": "headline"
     },
     {
-      "label": "text color",
+      "label": "Text color",
       "type": "color",
       "id": "textColor",
       "default": "#555555"
     },
     {
-      "label": "backGround color",
+      "label": "BackGround color",
       "type": "color",
       "id": "bgColor",
       "default": "#000000"
+    },
+    {
+      "label": "Padding",
+      "type": "range",
+      "id": "padding",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "label": "Border Color",
+      "type": "color",
+      "id": "borderColor",
+      "default": "#ff0000"
+    },
+    {
+      "label": "Border Size (Pixels)",
+      "type": "range",
+      "id": "borderSize",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
     }
   ]
 }
