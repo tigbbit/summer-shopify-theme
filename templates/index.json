@@ -4,8 +4,11 @@
       "type": "marquee",
       "settings": {
         "headline": "🧔🏿get your black ass out of my store 🧔🏿",
-        "textColor": "#ffffff",
-        "bgColor": "#000000"
+        "textColor": "#7dff1e",
+        "bgColor": "#fc1212",
+        "padding": 2,
+        "borderColor": "#000000",
+        "borderSize": 5
       }
     },
     "rich_text": {
