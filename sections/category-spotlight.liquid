@@ -1,4 +1,7 @@
 <h1>something</h1>
+<script>
+  console.log('this is the selected category', '{{section.settings.category}}');
+</script>
 
 {% schema %}
 {
@@ -10,6 +13,13 @@
       "name": "cotegory spotlight"
     }
   ],
-  "settings": []
+  "settings": [
+    {
+      "id": "category",
+      "label": "Category",
+      "info": "Select a category in order to display it",
+      "type": "collection"
+    }
+  ]
 }
 {% endschema %}
