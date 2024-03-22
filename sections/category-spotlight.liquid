@@ -1,13 +1,16 @@
-<h1>something</h1>
+{% assign selectedCollection = collections[section.settings.collection] %}
+
+<h1>{{ selectedCollection.title }}</h1>
+<img width="300" height="auto" src="{{ selectedCollection.image |  image_url}}" alt="">
 <script>
-  console.log('this is the selected category', '{{section.settings.category}}');
+  console.log('this is the selected collection', '{{selectedCollection.image |  image_url}}');
 </script>
 
 {% schema %}
 {
-  "name": "category-spotlight",
+  "name": "collection-spotlight",
   "tag": "article",
-  "class": "category-spotlight",
+  "class": "collection-spotlight",
   "presets": [
     {
       "name": "cotegory spotlight"
@@ -15,9 +18,9 @@
   ],
   "settings": [
     {
-      "id": "category",
-      "label": "Category",
-      "info": "Select a category in order to display it",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Select a Collection",
       "type": "collection"
     }
   ]
