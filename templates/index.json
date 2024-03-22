@@ -1,5 +1,10 @@
 {
   "sections": {
+    "category_spotlight_yfQXgq": {
+      "type": "category-spotlight",
+      "settings": {
+      }
+    },
     "marquee_JMte6K": {
       "type": "marquee",
       "settings": {
@@ -8,7 +13,8 @@
         "bgColor": "#fc1212",
         "padding": 2,
         "borderColor": "#000000",
-        "borderSize": 5
+        "borderSize": 5,
+        "animationDuration": 15
       }
     },
     "rich_text": {
@@ -185,6 +191,7 @@
     }
   },
   "order": [
+    "category_spotlight_yfQXgq",
     "marquee_JMte6K",
     "rich_text",
     "image_banner",
