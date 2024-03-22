@@ -2,8 +2,20 @@
 
 <h1>{{ selectedCollection.title }}</h1>
 <img width="300" height="auto" src="{{ selectedCollection.image |  image_url}}" alt="">
+
+{% assign products = selectedCollection.products %}
+
+{% assign limit = 2 %}
+{% assign count = 0 %}
+{% for product in products %}
+  {% if count < limit %}
+    <img height="300" width="auto" loading="eager" src="{{product.featured_image | image_url}}" alt="">
+    {% assign count = count | plus: 1 %}
+  {% endif %}
+{% endfor %}
 <script>
   console.log('this is the selected collection', '{{selectedCollection.image |  image_url}}');
+  console.log(first);
 </script>
 
 {% schema %}
