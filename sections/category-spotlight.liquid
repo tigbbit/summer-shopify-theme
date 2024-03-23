@@ -1,7 +1,15 @@
-{% assign selectedCollection = collections[section.settings.collection] %}
+{% assign settings = section.settings %}
+{% assign selectedCollection = collections[settings.collection] %}
 
-<h1>{{ selectedCollection.title }}</h1>
-<img width="300" height="auto" src="{{ selectedCollection.image |  image_url}}" alt="">
+<section class="collection-spotlight__cta">
+  <h1>{{ settings.heading }}</h1>
+  <p>{{ settings.collectionDescription }}</p>
+  {% if settings.buttonLink = '' %}
+    <a href="{{ selectedCollection.url }}">shop collection</a>
+  {% else %}
+    <a href="{{ settings.buttonLink }}">shop collection</a>
+  {% endif %}
+</section>
 
 {% assign products = selectedCollection.products %}
 
@@ -9,13 +17,19 @@
 {% assign count = 0 %}
 {% for product in products %}
   {% if count < limit %}
-    <img height="300" width="auto" loading="eager" src="{{product.featured_image | image_url}}" alt="">
+    <img
+      class="collection-spotlight__picture-{{count | plus: 1 }}"
+      height="300"
+      width="auto"
+      loading="eager"
+      src="{{product.featured_image | image_url}}"
+      alt="{{product.featured_image.alt}}"
+    >
     {% assign count = count | plus: 1 %}
   {% endif %}
 {% endfor %}
 <script>
-  console.log('this is the selected collection', '{{selectedCollection.image |  image_url}}');
-  console.log(first);
+  console.log('{{settings.buttonLink}}');
 </script>
 
 {% schema %}
@@ -34,6 +48,24 @@
       "label": "Collection",
       "info": "Select a Collection",
       "type": "collection"
+    },
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text",
+      "default": "Your collection"
+    },
+    {
+      "id": "collectionDescription",
+      "label": "Text",
+      "info": "Select a Collection",
+      "type": "textarea",
+      "default": "use this text to highlight your selected collection"
+    },
+    {
+      "id": "buttonLink",
+      "label": "Button link",
+      "type": "text"
     }
   ]
 }
