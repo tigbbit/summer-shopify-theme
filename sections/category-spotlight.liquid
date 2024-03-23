@@ -2,37 +2,38 @@
 
 {% assign settings = section.settings %}
 {% assign selectedCollection = collections[settings.collection] %}
+{% assign products = selectedCollection.products %}
 
 <section class="collection-spotlight">
-  <section class="collection-spotlight__cta">
-    <h1>{{ settings.heading }}</h1>
-    <p>{{ settings.collectionDescription }}</p>
-    {% if settings.buttonLink == '' %}
-      <a class="" href="{{ selectedCollection.url }}">shop collection</a>
-    {% else %}
-      <a class="" href="{{ settings.buttonLink }}">shop collection</a>
-    {% endif %}
-  </section>
-
-  <div>
-    {% assign products = selectedCollection.products %}
-
+  <div class="collection-spotlight__media">
     {% assign limit = 2 %}
     {% assign count = 0 %}
     {% for product in products %}
       {% if count < limit %}
-        <img
-          class="collection-spotlight__picture media-{{count | plus: 1 }}"
-          height="auto"
-          width="350px"
-          loading="eager"
-          src="{{product.featured_image | image_url}}"
-          alt="{{product.featured_image.alt}}"
-        >
+        <div class="collection-spotlight__picture media-{{count | plus: 1 }}">
+          <img
+            height="auto"
+            width="250px"
+            loading="eager"
+            src="{{product.featured_image | image_url}}"
+            alt="{{product.featured_image.alt}}"
+          >
+        </div>
+
         {% assign count = count | plus: 1 %}
       {% endif %}
     {% endfor %}
   </div>
+
+  <section class="collection-spotlight__cta">
+    <h1>{{ settings.heading }}</h1>
+    <p>{{ settings.collectionDescription }}</p>
+    {% if settings.buttonLink == '' %}
+      <a class="button" href="{{ selectedCollection.url }}">shop collection</a>
+    {% else %}
+      <a class="button" href="{{ settings.buttonLink }}">shop collection</a>
+    {% endif %}
+  </section>
 
   <script>
     console.log('{{settings.buttonLink}}');
