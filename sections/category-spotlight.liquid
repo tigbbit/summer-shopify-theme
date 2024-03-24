@@ -29,9 +29,9 @@
     <h1>{{ settings.heading }}</h1>
     <p>{{ settings.collectionDescription }}</p>
     {% if settings.buttonLink == '' %}
-      <a class="button" href="{{ selectedCollection.url }}">shop collection</a>
+      <a class="button" href="{{ selectedCollection.url }}">{{ settings.buttonText }}</a>
     {% else %}
-      <a class="button" href="{{ settings.buttonLink }}">shop collection</a>
+      <a class="button" href="{{ settings.buttonLink }}">{{ settings.buttonText }}</a>
     {% endif %}
   </section>
 
@@ -68,6 +68,12 @@
       "info": "Select a Collection",
       "type": "textarea",
       "default": "use this text to highlight your selected collection"
+    },
+    {
+      "id": "buttonText",
+      "label": "Button's text",
+      "type": "text",
+      "default": "Shop now"
     },
     {
       "id": "buttonLink",
