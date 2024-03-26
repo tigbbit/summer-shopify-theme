@@ -62,6 +62,7 @@
     "category_spotlight_yfQXgq": {
       "type": "category-spotlight",
       "settings": {
+        "color_scheme": "scheme-5",
         "collection": "2024-womens-swimwear",
         "heading": "Your collection",
         "collectionDescription": "Use this section to easily call attention to one of your collections. We'll show photos of the first 2 products.",
