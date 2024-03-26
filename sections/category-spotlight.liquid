@@ -1,13 +1,56 @@
-<h1>something</h1>
-<script>
-  console.log('this is the selected category', '{{section.settings.category}}');
-</script>
+{{ 'category-spotlight.css' | asset_url | stylesheet_tag }}
+
+{% assign settings = section.settings %}
+{% assign selectedCollection = collections[settings.collection] %}
+{% assign products = selectedCollection.products %}
+{% assign color_scheme = settings.color_scheme.settings %}
+
+<section
+  style="
+    background-color: {{ color_scheme.background }};
+    color: {{color_scheme.text}}
+  "
+  class="collection-spotlight"
+>
+  <div class="collection-spotlight__media">
+    {% assign limit = 2 %}
+    {% assign count = 0 %}
+    {% for product in products %}
+      {% if count < limit %}
+        <div class="collection-spotlight__picture media-{{count | plus: 1 }}">
+          <img
+            height="auto"
+            width="250px"
+            loading="{{settings.imageLoad}}"
+            src="{{product.featured_image | image_url}}"
+            alt="{{product.featured_image.alt}}"
+          >
+        </div>
+
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <section class="collection-spotlight__cta">
+    <h1>{{ settings.heading }}</h1>
+    <p>{{ settings.collectionDescription }}</p>
+    {% if settings.buttonLink == '' %}
+      <a class="button" href="{{ selectedCollection.url }}">{{ settings.buttonText }}</a>
+    {% else %}
+      <a class="button" href="{{ settings.buttonLink }}">{{ settings.buttonText }}</a>
+    {% endif %}
+  </section>
+
+  <script>
+    console.log('{{settings.color_scheme.settings}}');
+  </script>
+</section>
 
 {% schema %}
 {
-  "name": "category-spotlight",
+  "name": "collection-spotlight",
   "tag": "article",
-  "class": "category-spotlight",
   "presets": [
     {
       "name": "cotegory spotlight"
@@ -15,10 +58,56 @@
   ],
   "settings": [
     {
-      "id": "category",
-      "label": "Category",
-      "info": "Select a category in order to display it",
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color Scheme"
+    },
+    {
+      "id": "collection",
+      "label": "Collection",
+      "info": "Select a Collection",
       "type": "collection"
+    },
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text",
+      "default": "Your collection"
+    },
+    {
+      "id": "collectionDescription",
+      "label": "Text",
+      "info": "Select a Collection",
+      "type": "textarea",
+      "default": "use this text to highlight your selected collection"
+    },
+    {
+      "id": "buttonText",
+      "label": "Button's text",
+      "type": "text",
+      "default": "Shop now"
+    },
+    {
+      "id": "buttonLink",
+      "label": "Button link",
+      "type": "text"
+    },
+    {
+      "id": "imageLoad",
+      "type": "select",
+      "label": "Select",
+      "options": [
+        {
+          "value": "lazy",
+          "label": "Lazy"
+        },
+        {
+          "value": "eager",
+          "label": "Eager"
+        }
+      ],
+      "default": "lazy"
     }
   ]
 }

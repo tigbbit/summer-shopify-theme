@@ -1,51 +1,15 @@
 {
   "sections": {
-    "category_spotlight_yfQXgq": {
-      "type": "category-spotlight",
-      "settings": {
-        "category": "2024-womens-swimwear"
-      }
-    },
     "marquee_JMte6K": {
       "type": "marquee",
       "settings": {
-        "headline": "🧔🏿get your black ass out of my store 🧔🏿",
-        "textColor": "#7dff1e",
-        "bgColor": "#fc1212",
-        "padding": 2,
+        "headline": "great deals incoming🔥",
+        "textColor": "#000000",
+        "bgColor": "#ffffff",
+        "padding": 1,
         "borderColor": "#000000",
         "borderSize": 5,
         "animationDuration": 15
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "change made from code editor",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 60
       }
     },
     "image_banner": {
@@ -95,6 +59,48 @@
         "show_text_below": false
       }
     },
+    "category_spotlight_yfQXgq": {
+      "type": "category-spotlight",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "collection": "2024-womens-swimwear",
+        "heading": "Your collection",
+        "collectionDescription": "Use this section to easily call attention to one of your collections. We'll show photos of the first 2 products.",
+        "buttonText": "Shop now",
+        "buttonLink": "",
+        "imageLoad": "lazy"
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "change made from code editor",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -120,20 +126,6 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -192,12 +184,11 @@
     }
   },
   "order": [
-    "category_spotlight_yfQXgq",
     "marquee_JMte6K",
-    "rich_text",
     "image_banner",
+    "category_spotlight_yfQXgq",
+    "rich_text",
     "featured_collection",
-    "video",
     "multicolumn"
   ]
 }
