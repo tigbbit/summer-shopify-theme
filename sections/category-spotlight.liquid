@@ -3,8 +3,15 @@
 {% assign settings = section.settings %}
 {% assign selectedCollection = collections[settings.collection] %}
 {% assign products = selectedCollection.products %}
+{% assign color_scheme = settings.color_scheme.settings %}
 
-<section class="collection-spotlight">
+<section
+  style="
+    background-color: {{ color_scheme.background }};
+    color: {{color_scheme.text}}
+  "
+  class="collection-spotlight"
+>
   <div class="collection-spotlight__media">
     {% assign limit = 2 %}
     {% assign count = 0 %}
@@ -36,7 +43,7 @@
   </section>
 
   <script>
-    console.log('{{settings.buttonLink}}');
+    console.log('{{settings.color_scheme.settings}}');
   </script>
 </section>
 
@@ -50,6 +57,12 @@
     }
   ],
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color Scheme"
+    },
     {
       "id": "collection",
       "label": "Collection",
