@@ -1,0 +1,32 @@
+{% assign settings = section.settings %}
+
+<h1>{{ settings.heading }}</h1>
+<p>{{ settings.paragraphx }}</p>
+
+{% schema %}
+  {
+    "name": "large-image-with-text",
+    "class": "large-image-with-text",
+    "tag": "section",
+    "presets": [
+      {
+        "name": "large-image-with-text"
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "paragraph",
+        "default": "Enter your CTA",
+        "label": "Enter your CTA"
+      },
+      {}
+    ]
+  }
+{% endschema %}
